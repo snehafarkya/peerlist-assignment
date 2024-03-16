@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import logo from "../../public/images/logo.png";
 import circlelogo from "../../public/images/circlelogo.svg";
@@ -17,7 +19,30 @@ import threedot from "../../public/images/threedots.svg";
 import edit from "../../public/images/edit.svg";
 import Card from "./components/card";
 import CardContainer from "./components/cardContainer";
+import { useEffect, useState } from "react";
 export default function Home() {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const toggleSidebar = () => {
+    setIsSidebarOpen(!isSidebarOpen);
+  };
+  useEffect(() => {
+    const body = document.querySelector("body");
+    if (isSidebarOpen) {
+      //@ts-ignore
+      body.style.overflow = "hidden";
+    } else {
+      //@ts-ignore
+
+      body.style.overflow = "auto";
+    }
+
+    return () => {
+      //@ts-ignore
+
+      body.style.overflow = "auto";
+    };
+  }, [isSidebarOpen]);
+
   const asideMenu = [
     {
       icon: scroll,
@@ -56,11 +81,11 @@ export default function Home() {
   ];
   return (
     <>
-      <main className="md:px-40 flex  justify-start border-r border-[#E1E4E8]  items-start bg-white h-full min-h-screen">
-        <aside className="flex  flex-col py-4 sticky top-2 justify-between w-[212px] border-r  pr-6 h-auto min-h-screen">
+      <main className={`md:px-40 flex  justify-start border-r border-[#E1E4E8]  items-start bg-white h-full min-h-screen ${isSidebarOpen ? 'overflow-hidden':''}`}>
+        <aside className={`flex  flex-col py-4 md:sticky absolute bg-white md:top-0 pt-16 md:pt-4 pl-6 md:pl-0 left-0 z-50 overflow-auto ease-in-out transition-all duration-300 transform justify-between w-[224px] border-r   pr-6 h-auto min-h-screen   ${isSidebarOpen ? 'translate-x-0 w-full z-50 ' : ' md:translate-x-0 -translate-x-full overflow-hidden'}`}>
           <div className="">
-            <Image src={logo} alt="logo" height={32} />
-            <div className="flex flex-col gap-2 my-6">
+            <Image src={logo} alt="logo" height={32} className="hidden md:flex" />
+            <div className="flex flex-col gap-2 md:my-6 mt-0 mb-6">
               {asideMenu.map((item, index) => {
                 return (
                   <div
@@ -98,10 +123,45 @@ export default function Home() {
             <p className="text-[#444D56] text-[10px]">© 2023 Peerlist Inc.</p>
           </div>
         </aside>
-        <div className=" flex flex-col gap-6 w-full border-r border-[#E1E4E8] border-solid ">
+        <div className="md:hidden absolute flex justify-between border-b pb-4 top-4 px-6 w-full z-50">
+        <button onClick={toggleSidebar}>
+          {!isSidebarOpen ? (
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 text-gray-700"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M4 6h16M4 12h16M4 18h16"
+            />
+          </svg>
+          ): (<svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 text-gray-700"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth={2}
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>)}
+        </button>
+        <Image src={logo} alt="logo" height={32} />
+
+      </div>
+        <div className=" flex flex-col gap-6 w-full border-r border-[#E1E4E8] border-solid mt-12 md:mt-0">
           <div className="flex p-6 flex-col gap-6 bg-[#FAFBFC] w-full border-b border-r border-[#E1E4E8]">
             <div className="flex justify-between w-full items-start">
-              <div className="flex gap-4 items-center">
+              <div className="flex gap-4 md:items-center items-start">
                 <Image
                   src={circlelogo}
                   alt="circlelogo"
@@ -119,7 +179,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-              <div className="gap-2 flex">
+              <div className="gap-2 md:flex hidden">
                 {asideMenu.map((item, index) => {
                   return (
                     <>
@@ -140,7 +200,7 @@ export default function Home() {
                 })}
               </div>
             </div>
-            <div className="flex justify-between w-full pl-16">
+            <div className="flex md:flex-row  flex-col md:justify-between items-start gap-2 w-full md:pl-16">
               <div className="flex gap-4 ">
                 {asideMenu.map((item, index) => {
                   return (
@@ -150,7 +210,7 @@ export default function Home() {
                           <p className="text-xs font-semibold text-[#0D0D0D]">
                             {item.stat}
                           </p>
-                          <p className="text-xs font-normal text-[#0D0D0D]">
+                          <p className="text-xs flex-wrap font-normal text-[#0D0D0D]">
                             {item.value}
                           </p>
                         </div>

@@ -154,7 +154,7 @@ const CardContainer = () => {
           className=" text-[#959DA5] border-gray-300 rounded-md px-1 py-1 focus:outline-none focus:ring-0 focus:border-transparent"
         />
       </div>
-      <div className="grid grid-cols-3 px-6 gap-4">
+      <div className="grid md:grid-cols-3 grid-cols-1 px-6 gap-4">
         <div
           onDrop={(e) => handleDrop(e, "rejected")}
           onDragOver={(e) => e.preventDefault()}
