@@ -47,7 +47,7 @@ const Card = ({
       onDragStart={handleDragStart}
       onDragEnd={handleDragEnd}
       onDrag={handleDrag}
-      className={`py-6 px-4 m-2 mx-1 border-[#E1E4E8] border  bg-white rounded-md flex flex-col justify-start gap-2  text-black transition-all duration-300 ${
+      className={`py-6 px-4 m-2  border-[#E1E4E8] border  bg-white rounded-md flex flex-col justify-start gap-2  text-black transition-all duration-300 ${
         isDragging ? "opacity-50" : ""
       }`}
     >

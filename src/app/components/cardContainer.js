@@ -139,11 +139,11 @@ const CardContainer = () => {
     setCards(updatedCards);
   };
   const getCountByCategory = (category) => {
-    return cards.filter((card) => card.category === category).length;
+    return filteredCards.filter((card) => card.category === category).length;
   };
 
   return (
-    <div className="border-r">
+    <div className="">
       <div className="flex items-center justify-start px-6 mb-4 ">
         <Image src={searchIcon} alt="search icon" />
         <input
@@ -154,11 +154,11 @@ const CardContainer = () => {
           className=" text-[#959DA5] border-gray-300 rounded-md px-1 py-1 focus:outline-none focus:ring-0 focus:border-transparent"
         />
       </div>
-      <div className="grid md:grid-cols-3 grid-cols-1 px-6 gap-4">
+      <div className="grid md:grid-cols-3 grid-cols-1 px-6 gap-4 pb-16">
         <div
           onDrop={(e) => handleDrop(e, "rejected")}
           onDragOver={(e) => e.preventDefault()}
-          className="border border-[#FFEAEA] h-auto rounded-lg"
+          className="border border-[#FFEAEA] bg-[#FAFBFC] h-auto rounded-lg"
         >
           <h2 className="bg-[#FFEAEA] p-2 font-semibold rounded-t-lg tracking-[4%] uppercase flex items-center gap-1 text-[#EB5757] text-xs">
             {" "}
@@ -188,7 +188,7 @@ const CardContainer = () => {
         <div
           onDrop={(e) => handleDrop(e, "applied")}
           onDragOver={(e) => e.preventDefault()}
-          className="border border-[#E1E4E8] h-auto rounded-lg"
+          className="border border-[#E1E4E8] bg-[#FAFBFC] h-auto rounded-lg"
         >
           <h2 className="bg-[#E1E4E8] text-[#0D0D0D]  rounded-t-lg p-2 font-semibold tracking-[4%] flex gap-1 items-center uppercase text-xs">
             {" "}
@@ -224,7 +224,7 @@ const CardContainer = () => {
         <div
           onDrop={(e) => handleDrop(e, "shortlisted")}
           onDragOver={(e) => e.preventDefault()}
-          className="rounded-lg border border-[#E2F5EA] h-auto"
+          className="rounded-lg border border-[#E2F5EA] bg-[#FAFBFC] h-auto"
         >
           <h2 className="p-2 font-semibold tracking-[4%] rounded-t-lg uppercase flex gap-1 items-center text-xs bg-[#E2F5EA] text-[#219653]">
             <span>

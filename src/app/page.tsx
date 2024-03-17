@@ -81,8 +81,8 @@ export default function Home() {
   ];
   return (
     <>
-      <main className={`md:px-40 flex  justify-start border-r border-[#E1E4E8]  items-start bg-white h-full min-h-screen ${isSidebarOpen ? 'overflow-hidden':''}`}>
-        <aside className={`flex  flex-col py-4 md:sticky absolute bg-white md:top-0 pt-16 md:pt-4 pl-6 md:pl-0 left-0 z-50 overflow-auto ease-in-out transition-all duration-300 transform justify-between w-[224px] border-r   pr-6 h-auto min-h-screen   ${isSidebarOpen ? 'translate-x-0 w-full z-50 ' : ' md:translate-x-0 -translate-x-full overflow-hidden'}`}>
+      <main className={`md:mx-auto md:max-w-[1250px] flex  justify-start border-[#E1E4E8] items-start bg-white h-full min-h-screen ${isSidebarOpen ? 'overflow-hidden':''}`}>
+        <aside className={`flex  flex-col py-4 md:sticky absolute bg-white md:top-0 pt-16 md:pt-4 pl-6  left-0 z-50 overflow-auto ease-in-out transition-all duration-300 transform justify-between  pr-6 h-auto md:min-h-[650px] min-h-screen   ${isSidebarOpen ? 'translate-x-0 w-[100%] z-50 ' : ' md:translate-x-0 w-[278px] -translate-x-full overflow-hidden'}`}>
           <div className="">
             <Image src={logo} alt="logo" height={32} className="hidden md:flex" />
             <div className="flex flex-col gap-2 md:my-6 mt-0 mb-6">
@@ -158,8 +158,8 @@ export default function Home() {
         <Image src={logo} alt="logo" height={32} />
 
       </div>
-        <div className=" flex flex-col gap-6 w-full border-r border-[#E1E4E8] border-solid mt-12 md:mt-0">
-          <div className="flex p-6 flex-col gap-6 bg-[#FAFBFC] w-full border-b border-r border-[#E1E4E8]">
+        <div className=" flex flex-col gap-6 w-full border-r border-l border-[#E1E4E8] min-h-screen border-solid mt-16 md:mt-0">
+          <div className="flex p-6 flex-col gap-6 bg-[#FAFBFC] w-full border-b border-[#E1E4E8]">
             <div className="flex justify-between w-full items-start">
               <div className="flex gap-4 md:items-center items-start">
                 <Image
@@ -175,7 +175,7 @@ export default function Home() {
                     </span>
                   </p>
                   <p className=" text-sm text-[#0D0D0D]">
-                    at Dyte • Full time • Remote (United States, Canada)
+                    at Peerlist • Full time • Remote (United States, Canada)
                   </p>
                 </div>
               </div>
@@ -185,7 +185,7 @@ export default function Home() {
                     <>
                       {item.social ? (
                         <div
-                          className="rounded-full cursor-pointer  p-1 border"
+                          className="rounded-full cursor-pointer hover:bg-[#d1d5da] shadoww p-1 border"
                           style={{ cursor: "pointer" }}
                         >
                           <Image
