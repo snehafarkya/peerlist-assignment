@@ -29,6 +29,6 @@ To run the Peerlist assignment locally, follow these steps:
 
 ## Link links 🔗
 Github: [Peerlist Assignment](https://github.com/snehafarkya/peerlist-assignment)
-Deploye Link: [Live here](https://peerlist-assignment.vercel.app/)
+Deployed Link: [Live here](https://peerlist-assignment-one.vercel.app/)
 
 Have a great day🌻!
