@@ -28,7 +28,8 @@ To run the Peerlist assignment locally, follow these steps:
 4. Start the development server: `npm run dev`
 
 ## Link links 🔗
-Github: [Peerlist Assignment](https://github.com/snehafarkya/peerlist-assignment)
+Github: [Peerlist Assignment](https://github.com/snehafarkya/peerlist-assignment) 
+<br/>
 Deployed Link: [Live here](https://peerlist-assignment-one.vercel.app/)
 
 Have a great day🌻!
