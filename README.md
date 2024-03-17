@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Peerlist Dashboard - a Frontend Assignment 💚 
+![Alt Text](./public/images/readme_assets/card.png)
 
-## Getting Started
+This Peerlist assignment is a candidate management single page application that allows you to organize job applicants into different categories such as <b> Applied, Rejected, and Shortlisted.</b> The application includes two key functionalities: drag and drop cards with dynamic content changes based on category, and search functionality for candidates by email, name, company, and mobile number. 
 
-First, run the development server:
+## How it is built 👩‍💻?
+The dashboard was developed using the following technologies: 
+- Next Js for Frontend
+- Tailwind CSS for styling 
+- Hosted on Github 
+- Deployed on Vercel 
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## Features 🤩
+ - Drag and drop cards between categories to update candidate status
+ - Dynamically change card content based on category
+- Search for candidates by email, name, company, or mobile number <br/>
+![Search card](./public/images/readme_assets/card.png) <br/> 
+ - Fully responsive design for mobile and desktop devices <br/> 
+![Search card](./public/images/readme_assets/mobile.png) 
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Installation 🎁
+To run the Peerlist assignment locally, follow these steps:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+1. Clone the repository: `git clone https://github.com/yourusername/peerlist-assignment.git`
+2. Navigate to the project directory: `cd peerlist-assignment`
+3. Install dependencies: `npm install`
+4. Start the development server: `npm run dev`
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Link links 🔗
+Github: [Peerlist Assignment](https://github.com/snehafarkya/peerlist-assignment)
+Deploye Link: [Live here](https://peerlist-assignment-nine.vercel.app/)
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Have a great day🌻!
